@@ -49,9 +49,11 @@ Param
         [parameter(ParameterSetName="TokenAuth",Mandatory=$true)]
         [String]
         $UserName,
-        [Parameter(ParameterSetName="TokenAuth",Mandatory=$true)]
-        [SecureString]
-        $Password
+        [Parameter(
+            ParameterSetName="TokenAuth",
+            Mandatory=$true
+        )]
+        [Security.SecureString]$Password
             
     )
 begin
