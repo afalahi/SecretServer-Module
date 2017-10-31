@@ -53,11 +53,12 @@ Param
             ParameterSetName="TokenAuth",
             Mandatory=$true
         )]
-        [Security.SecureString]${Type your secret password}
+        [Security.SecureString]${Password}
             
     )
 begin
     {
+        $Password = ${Password}
         $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Password)
         $Password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
     }
